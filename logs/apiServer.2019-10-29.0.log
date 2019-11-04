@@ -1,0 +1,567 @@
+INFO 	09:53:52.223	restartedMain	com.batch.updater.BatchUpdaterApplication	Starting BatchUpdaterApplication on 박해평 with PID 2884 (C:\dev\humuson\batchUpdater\batchUpdater\target\classes started by USER in C:\dev\humuson\batchUpdater\batchUpdater)
+INFO 	09:53:52.228	restartedMain	com.batch.updater.BatchUpdaterApplication	No active profile set, falling back to default profiles: default
+INFO 	09:53:55.148	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Starting...
+ERROR	09:53:55.363	restartedMain	com.zaxxer.hikari.pool.HikariPool	HikariPool-1 - Exception during pool initialization.
+java.sql.SQLSyntaxErrorException: Access denied for user 'humuson'@'%' to database 'humuson'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:311)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1799)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.batch.updater.BatchUpdaterApplication.main(BatchUpdaterApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+WARN 	09:53:55.372	restartedMain	org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext	Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.DatabaseException: java.sql.SQLSyntaxErrorException: Access denied for user 'humuson'@'%' to database 'humuson'
+ERROR	09:53:55.391	restartedMain	org.springframework.boot.SpringApplication	Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.DatabaseException: java.sql.SQLSyntaxErrorException: Access denied for user 'humuson'@'%' to database 'humuson'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1803)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.batch.updater.BatchUpdaterApplication.main(BatchUpdaterApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: liquibase.exception.DatabaseException: java.sql.SQLSyntaxErrorException: Access denied for user 'humuson'@'%' to database 'humuson'
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:316)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1799)
+	... 23 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: Access denied for user 'humuson'@'%' to database 'humuson'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:311)
+	... 25 common frames omitted
+INFO 	09:54:54.976	restartedMain	com.batch.updater.BatchUpdaterApplication	Starting BatchUpdaterApplication on 박해평 with PID 2440 (C:\dev\humuson\batchUpdater\batchUpdater\target\classes started by USER in C:\dev\humuson\batchUpdater\batchUpdater)
+INFO 	09:54:54.979	restartedMain	com.batch.updater.BatchUpdaterApplication	No active profile set, falling back to default profiles: default
+INFO 	09:54:57.576	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Starting...
+INFO 	09:54:57.767	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Start completed.
+INFO 	09:54:58.247	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT COUNT(*) FROM humuson_1.DATABASECHANGELOGLOCK
+INFO 	09:54:58.269	restartedMain	liquibase.executor.jvm.JdbcExecutor	CREATE TABLE humuson_1.DATABASECHANGELOGLOCK (ID INT NOT NULL, `LOCKED` BIT(1) NOT NULL, LOCKGRANTED datetime NULL, LOCKEDBY VARCHAR(255) NULL, CONSTRAINT PK_DATABASECHANGELOGLOCK PRIMARY KEY (ID))
+INFO 	09:54:58.299	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT COUNT(*) FROM humuson_1.DATABASECHANGELOGLOCK
+INFO 	09:54:58.344	restartedMain	liquibase.executor.jvm.JdbcExecutor	DELETE FROM humuson_1.DATABASECHANGELOGLOCK
+INFO 	09:54:58.346	restartedMain	liquibase.executor.jvm.JdbcExecutor	INSERT INTO humuson_1.DATABASECHANGELOGLOCK (ID, `LOCKED`) VALUES (1, 0)
+INFO 	09:54:58.349	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT `LOCKED` FROM humuson_1.DATABASECHANGELOGLOCK WHERE ID=1
+INFO 	09:54:58.357	restartedMain	liquibase.lockservice.StandardLockService	Successfully acquired change log lock
+INFO 	09:54:58.366	restartedMain	liquibase.lockservice.StandardLockService	Successfully released change log lock
+WARN 	09:54:58.371	restartedMain	org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext	Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yml
+INFO 	09:54:58.371	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Shutdown initiated...
+INFO 	09:54:58.385	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Shutdown completed.
+ERROR	09:54:58.403	restartedMain	org.springframework.boot.SpringApplication	Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yml
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1803)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.batch.updater.BatchUpdaterApplication.main(BatchUpdaterApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: liquibase.exception.ChangeLogParseException: Error parsing classpath:db/changelog/db.changelog-master.yml
+	at liquibase.parser.core.yaml.YamlChangeLogParser.parse(YamlChangeLogParser.java:83)
+	at liquibase.Liquibase.getDatabaseChangeLog(Liquibase.java:217)
+	at liquibase.Liquibase.update(Liquibase.java:190)
+	at liquibase.Liquibase.update(Liquibase.java:179)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:366)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:314)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1799)
+	... 23 common frames omitted
+Caused by: java.io.FileNotFoundException: class path resource [db/changelog/db.changelog-master.yml] cannot be resolved to URL because it does not exist
+	at org.springframework.core.io.ClassPathResource.getURL(ClassPathResource.java:195)
+	at liquibase.integration.spring.SpringLiquibase$SpringResourceOpener.getResourcesAsStream(SpringLiquibase.java:613)
+	at liquibase.util.StreamUtil.singleInputStream(StreamUtil.java:186)
+	at liquibase.parser.core.yaml.YamlChangeLogParser.parse(YamlChangeLogParser.java:26)
+	... 30 common frames omitted
+INFO 	09:55:27.639	restartedMain	com.batch.updater.BatchUpdaterApplication	Starting BatchUpdaterApplication on 박해평 with PID 8776 (C:\dev\humuson\batchUpdater\batchUpdater\target\classes started by USER in C:\dev\humuson\batchUpdater\batchUpdater)
+INFO 	09:55:27.644	restartedMain	com.batch.updater.BatchUpdaterApplication	No active profile set, falling back to default profiles: default
+INFO 	09:55:30.319	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Starting...
+INFO 	09:55:30.487	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Start completed.
+INFO 	09:55:30.972	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT COUNT(*) FROM humuson_1.DATABASECHANGELOGLOCK
+INFO 	09:55:30.979	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT COUNT(*) FROM humuson_1.DATABASECHANGELOGLOCK
+INFO 	09:55:30.982	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT `LOCKED` FROM humuson_1.DATABASECHANGELOGLOCK WHERE ID=1
+INFO 	09:55:31.003	restartedMain	liquibase.lockservice.StandardLockService	Successfully acquired change log lock
+INFO 	09:55:31.822	restartedMain	liquibase.lockservice.StandardLockService	Successfully released change log lock
+WARN 	09:55:31.826	restartedMain	org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext	Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ChangeLogParseException: liquibase.exception.SetupException: Error Reading Migration File: class path resource [com/gytni/imonPCS/db/changelog/db1.changelog-1.0.0.xml] cannot be resolved to URL because it does not exist
+INFO 	09:55:31.827	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Shutdown initiated...
+INFO 	09:55:31.838	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Shutdown completed.
+ERROR	09:55:31.857	restartedMain	org.springframework.boot.SpringApplication	Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ChangeLogParseException: liquibase.exception.SetupException: Error Reading Migration File: class path resource [com/gytni/imonPCS/db/changelog/db1.changelog-1.0.0.xml] cannot be resolved to URL because it does not exist
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1803)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.batch.updater.BatchUpdaterApplication.main(BatchUpdaterApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: liquibase.exception.ChangeLogParseException: liquibase.exception.SetupException: Error Reading Migration File: class path resource [com/gytni/imonPCS/db/changelog/db1.changelog-1.0.0.xml] cannot be resolved to URL because it does not exist
+	at liquibase.parser.core.xml.AbstractChangeLogParser.parse(AbstractChangeLogParser.java:25)
+	at liquibase.Liquibase.getDatabaseChangeLog(Liquibase.java:217)
+	at liquibase.Liquibase.update(Liquibase.java:190)
+	at liquibase.Liquibase.update(Liquibase.java:179)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:366)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:314)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1799)
+	... 23 common frames omitted
+Caused by: liquibase.exception.SetupException: Error Reading Migration File: class path resource [com/gytni/imonPCS/db/changelog/db1.changelog-1.0.0.xml] cannot be resolved to URL because it does not exist
+	at liquibase.changelog.DatabaseChangeLog.handleChildNode(DatabaseChangeLog.java:359)
+	at liquibase.changelog.DatabaseChangeLog.load(DatabaseChangeLog.java:308)
+	at liquibase.parser.core.xml.AbstractChangeLogParser.parse(AbstractChangeLogParser.java:23)
+	... 30 common frames omitted
+Caused by: liquibase.exception.ChangeLogParseException: Error Reading Migration File: class path resource [com/gytni/imonPCS/db/changelog/db1.changelog-1.0.0.xml] cannot be resolved to URL because it does not exist
+	at liquibase.parser.core.xml.XMLChangeLogSAXParser.parseToNode(XMLChangeLogSAXParser.java:118)
+	at liquibase.parser.core.xml.AbstractChangeLogParser.parse(AbstractChangeLogParser.java:15)
+	at liquibase.changelog.DatabaseChangeLog.include(DatabaseChangeLog.java:568)
+	at liquibase.changelog.DatabaseChangeLog.handleChildNode(DatabaseChangeLog.java:351)
+	... 32 common frames omitted
+Caused by: java.io.FileNotFoundException: class path resource [com/gytni/imonPCS/db/changelog/db1.changelog-1.0.0.xml] cannot be resolved to URL because it does not exist
+	at org.springframework.core.io.ClassPathResource.getURL(ClassPathResource.java:195)
+	at liquibase.integration.spring.SpringLiquibase$SpringResourceOpener.getResourcesAsStream(SpringLiquibase.java:613)
+	at liquibase.util.StreamUtil.singleInputStream(StreamUtil.java:186)
+	at liquibase.parser.core.xml.XMLChangeLogSAXParser.parseToNode(XMLChangeLogSAXParser.java:71)
+	... 35 common frames omitted
+INFO 	09:57:21.339	restartedMain	com.batch.updater.BatchUpdaterApplication	Starting BatchUpdaterApplication on 박해평 with PID 1964 (C:\dev\humuson\batchUpdater\batchUpdater\target\classes started by USER in C:\dev\humuson\batchUpdater\batchUpdater)
+INFO 	09:57:21.342	restartedMain	com.batch.updater.BatchUpdaterApplication	No active profile set, falling back to default profiles: default
+INFO 	09:57:23.926	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Starting...
+INFO 	09:57:24.120	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Start completed.
+INFO 	09:57:24.615	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT COUNT(*) FROM humuson_1.DATABASECHANGELOGLOCK
+INFO 	09:57:24.622	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT COUNT(*) FROM humuson_1.DATABASECHANGELOGLOCK
+INFO 	09:57:24.624	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT `LOCKED` FROM humuson_1.DATABASECHANGELOGLOCK WHERE ID=1
+INFO 	09:57:24.644	restartedMain	liquibase.lockservice.StandardLockService	Successfully acquired change log lock
+INFO 	09:57:25.458	restartedMain	liquibase.changelog.StandardChangeLogHistoryService	Creating database history table with name: humuson_1.DATABASECHANGELOG
+INFO 	09:57:25.462	restartedMain	liquibase.executor.jvm.JdbcExecutor	CREATE TABLE humuson_1.DATABASECHANGELOG (ID VARCHAR(255) NOT NULL, AUTHOR VARCHAR(255) NOT NULL, FILENAME VARCHAR(255) NOT NULL, DATEEXECUTED datetime NOT NULL, ORDEREXECUTED INT NOT NULL, EXECTYPE VARCHAR(10) NOT NULL, MD5SUM VARCHAR(35) NULL, `DESCRIPTION` VARCHAR(255) NULL, COMMENTS VARCHAR(255) NULL, TAG VARCHAR(255) NULL, LIQUIBASE VARCHAR(20) NULL, CONTEXTS VARCHAR(255) NULL, LABELS VARCHAR(255) NULL, DEPLOYMENT_ID VARCHAR(10) NULL)
+INFO 	09:57:25.489	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT COUNT(*) FROM humuson_1.DATABASECHANGELOG
+INFO 	09:57:25.494	restartedMain	liquibase.changelog.StandardChangeLogHistoryService	Reading from humuson_1.DATABASECHANGELOG
+INFO 	09:57:25.496	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT * FROM humuson_1.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+INFO 	09:57:25.511	restartedMain	liquibase.lockservice.StandardLockService	Successfully released change log lock
+WARN 	09:57:25.512	restartedMain	org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext	Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is java.lang.ArrayIndexOutOfBoundsException: 1
+INFO 	09:57:25.513	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Shutdown initiated...
+INFO 	09:57:25.526	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Shutdown completed.
+ERROR	09:57:25.543	restartedMain	org.springframework.boot.SpringApplication	Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is java.lang.ArrayIndexOutOfBoundsException: 1
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1803)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.batch.updater.BatchUpdaterApplication.main(BatchUpdaterApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.ArrayIndexOutOfBoundsException: 1
+	at liquibase.datatype.DataTypeFactory.fromDescription(DataTypeFactory.java:251)
+	at liquibase.change.core.CreateTableChange.generateStatements(CreateTableChange.java:70)
+	at liquibase.change.AbstractChange.generateStatementsVolatile(AbstractChange.java:287)
+	at liquibase.change.AbstractChange.warn(AbstractChange.java:358)
+	at liquibase.changelog.visitor.ValidatingVisitor.visit(ValidatingVisitor.java:110)
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:83)
+	at liquibase.changelog.DatabaseChangeLog.validate(DatabaseChangeLog.java:284)
+	at liquibase.Liquibase.update(Liquibase.java:198)
+	at liquibase.Liquibase.update(Liquibase.java:179)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:366)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:314)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1799)
+	... 23 common frames omitted
+INFO 	09:57:57.640	restartedMain	com.batch.updater.BatchUpdaterApplication	Starting BatchUpdaterApplication on 박해평 with PID 10820 (C:\dev\humuson\batchUpdater\batchUpdater\target\classes started by USER in C:\dev\humuson\batchUpdater\batchUpdater)
+INFO 	09:57:57.643	restartedMain	com.batch.updater.BatchUpdaterApplication	No active profile set, falling back to default profiles: default
+INFO 	09:58:00.390	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Starting...
+INFO 	09:58:00.606	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Start completed.
+INFO 	09:58:01.129	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT COUNT(*) FROM humuson_1.DATABASECHANGELOGLOCK
+INFO 	09:58:01.136	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT COUNT(*) FROM humuson_1.DATABASECHANGELOGLOCK
+INFO 	09:58:01.138	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT `LOCKED` FROM humuson_1.DATABASECHANGELOGLOCK WHERE ID=1
+INFO 	09:58:01.157	restartedMain	liquibase.lockservice.StandardLockService	Successfully acquired change log lock
+INFO 	09:58:02.134	restartedMain	liquibase.lockservice.StandardLockService	Successfully released change log lock
+WARN 	09:58:02.140	restartedMain	org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext	Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ChangeLogParseException: liquibase.exception.SetupException: Error Reading Migration File: class path resource [changelog/db1.changelog-1.0.0.xml] cannot be resolved to URL because it does not exist
+INFO 	09:58:02.142	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Shutdown initiated...
+INFO 	09:58:02.157	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Shutdown completed.
+ERROR	09:58:02.184	restartedMain	org.springframework.boot.SpringApplication	Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ChangeLogParseException: liquibase.exception.SetupException: Error Reading Migration File: class path resource [changelog/db1.changelog-1.0.0.xml] cannot be resolved to URL because it does not exist
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1803)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.batch.updater.BatchUpdaterApplication.main(BatchUpdaterApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: liquibase.exception.ChangeLogParseException: liquibase.exception.SetupException: Error Reading Migration File: class path resource [changelog/db1.changelog-1.0.0.xml] cannot be resolved to URL because it does not exist
+	at liquibase.parser.core.xml.AbstractChangeLogParser.parse(AbstractChangeLogParser.java:25)
+	at liquibase.Liquibase.getDatabaseChangeLog(Liquibase.java:217)
+	at liquibase.Liquibase.update(Liquibase.java:190)
+	at liquibase.Liquibase.update(Liquibase.java:179)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:366)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:314)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1799)
+	... 23 common frames omitted
+Caused by: liquibase.exception.SetupException: Error Reading Migration File: class path resource [changelog/db1.changelog-1.0.0.xml] cannot be resolved to URL because it does not exist
+	at liquibase.changelog.DatabaseChangeLog.handleChildNode(DatabaseChangeLog.java:359)
+	at liquibase.changelog.DatabaseChangeLog.load(DatabaseChangeLog.java:308)
+	at liquibase.parser.core.xml.AbstractChangeLogParser.parse(AbstractChangeLogParser.java:23)
+	... 30 common frames omitted
+Caused by: liquibase.exception.ChangeLogParseException: Error Reading Migration File: class path resource [changelog/db1.changelog-1.0.0.xml] cannot be resolved to URL because it does not exist
+	at liquibase.parser.core.xml.XMLChangeLogSAXParser.parseToNode(XMLChangeLogSAXParser.java:118)
+	at liquibase.parser.core.xml.AbstractChangeLogParser.parse(AbstractChangeLogParser.java:15)
+	at liquibase.changelog.DatabaseChangeLog.include(DatabaseChangeLog.java:568)
+	at liquibase.changelog.DatabaseChangeLog.handleChildNode(DatabaseChangeLog.java:351)
+	... 32 common frames omitted
+Caused by: java.io.FileNotFoundException: class path resource [changelog/db1.changelog-1.0.0.xml] cannot be resolved to URL because it does not exist
+	at org.springframework.core.io.ClassPathResource.getURL(ClassPathResource.java:195)
+	at liquibase.integration.spring.SpringLiquibase$SpringResourceOpener.getResourcesAsStream(SpringLiquibase.java:613)
+	at liquibase.util.StreamUtil.singleInputStream(StreamUtil.java:186)
+	at liquibase.parser.core.xml.XMLChangeLogSAXParser.parseToNode(XMLChangeLogSAXParser.java:71)
+	... 35 common frames omitted
+INFO 	09:58:17.797	restartedMain	com.batch.updater.BatchUpdaterApplication	Starting BatchUpdaterApplication on 박해평 with PID 13204 (C:\dev\humuson\batchUpdater\batchUpdater\target\classes started by USER in C:\dev\humuson\batchUpdater\batchUpdater)
+INFO 	09:58:17.799	restartedMain	com.batch.updater.BatchUpdaterApplication	No active profile set, falling back to default profiles: default
+INFO 	09:58:20.447	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Starting...
+INFO 	09:58:20.631	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Start completed.
+INFO 	09:58:21.131	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT COUNT(*) FROM humuson_1.DATABASECHANGELOGLOCK
+INFO 	09:58:21.142	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT COUNT(*) FROM humuson_1.DATABASECHANGELOGLOCK
+INFO 	09:58:21.144	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT `LOCKED` FROM humuson_1.DATABASECHANGELOGLOCK WHERE ID=1
+INFO 	09:58:21.165	restartedMain	liquibase.lockservice.StandardLockService	Successfully acquired change log lock
+INFO 	09:58:22.054	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT MD5SUM FROM humuson_1.DATABASECHANGELOG WHERE MD5SUM IS NOT NULL LIMIT 1
+INFO 	09:58:22.057	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT COUNT(*) FROM humuson_1.DATABASECHANGELOG
+INFO 	09:58:22.058	restartedMain	liquibase.changelog.StandardChangeLogHistoryService	Reading from humuson_1.DATABASECHANGELOG
+INFO 	09:58:22.059	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT * FROM humuson_1.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+INFO 	09:58:22.076	restartedMain	liquibase.lockservice.StandardLockService	Successfully released change log lock
+WARN 	09:58:22.077	restartedMain	org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext	Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is java.lang.ArrayIndexOutOfBoundsException: 1
+INFO 	09:58:22.078	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Shutdown initiated...
+INFO 	09:58:22.090	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Shutdown completed.
+ERROR	09:58:22.108	restartedMain	org.springframework.boot.SpringApplication	Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is java.lang.ArrayIndexOutOfBoundsException: 1
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1803)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.batch.updater.BatchUpdaterApplication.main(BatchUpdaterApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.ArrayIndexOutOfBoundsException: 1
+	at liquibase.datatype.DataTypeFactory.fromDescription(DataTypeFactory.java:251)
+	at liquibase.change.core.CreateTableChange.generateStatements(CreateTableChange.java:70)
+	at liquibase.change.AbstractChange.generateStatementsVolatile(AbstractChange.java:287)
+	at liquibase.change.AbstractChange.warn(AbstractChange.java:358)
+	at liquibase.changelog.visitor.ValidatingVisitor.visit(ValidatingVisitor.java:110)
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:83)
+	at liquibase.changelog.DatabaseChangeLog.validate(DatabaseChangeLog.java:284)
+	at liquibase.Liquibase.update(Liquibase.java:198)
+	at liquibase.Liquibase.update(Liquibase.java:179)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:366)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:314)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1799)
+	... 23 common frames omitted
+INFO 	09:59:21.113	restartedMain	com.batch.updater.BatchUpdaterApplication	Starting BatchUpdaterApplication on 박해평 with PID 7304 (C:\dev\humuson\batchUpdater\batchUpdater\target\classes started by USER in C:\dev\humuson\batchUpdater\batchUpdater)
+INFO 	09:59:21.116	restartedMain	com.batch.updater.BatchUpdaterApplication	No active profile set, falling back to default profiles: default
+INFO 	09:59:23.720	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Starting...
+INFO 	09:59:23.925	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Start completed.
+INFO 	09:59:24.454	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT COUNT(*) FROM humuson_1.DATABASECHANGELOGLOCK
+INFO 	09:59:24.460	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT COUNT(*) FROM humuson_1.DATABASECHANGELOGLOCK
+INFO 	09:59:24.462	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT `LOCKED` FROM humuson_1.DATABASECHANGELOGLOCK WHERE ID=1
+INFO 	09:59:24.480	restartedMain	liquibase.lockservice.StandardLockService	Successfully acquired change log lock
+INFO 	09:59:25.428	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT MD5SUM FROM humuson_1.DATABASECHANGELOG WHERE MD5SUM IS NOT NULL LIMIT 1
+INFO 	09:59:25.431	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT COUNT(*) FROM humuson_1.DATABASECHANGELOG
+INFO 	09:59:25.433	restartedMain	liquibase.changelog.StandardChangeLogHistoryService	Reading from humuson_1.DATABASECHANGELOG
+INFO 	09:59:25.433	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT * FROM humuson_1.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+INFO 	09:59:25.449	restartedMain	liquibase.lockservice.StandardLockService	Successfully released change log lock
+WARN 	09:59:25.451	restartedMain	org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext	Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is java.lang.ArrayIndexOutOfBoundsException: 1
+INFO 	09:59:25.451	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Shutdown initiated...
+INFO 	09:59:25.463	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Shutdown completed.
+ERROR	09:59:25.480	restartedMain	org.springframework.boot.SpringApplication	Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is java.lang.ArrayIndexOutOfBoundsException: 1
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1803)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.batch.updater.BatchUpdaterApplication.main(BatchUpdaterApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.ArrayIndexOutOfBoundsException: 1
+	at liquibase.datatype.DataTypeFactory.fromDescription(DataTypeFactory.java:251)
+	at liquibase.change.core.CreateTableChange.generateStatements(CreateTableChange.java:70)
+	at liquibase.change.AbstractChange.generateStatementsVolatile(AbstractChange.java:287)
+	at liquibase.change.AbstractChange.warn(AbstractChange.java:358)
+	at liquibase.changelog.visitor.ValidatingVisitor.visit(ValidatingVisitor.java:110)
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:83)
+	at liquibase.changelog.DatabaseChangeLog.validate(DatabaseChangeLog.java:284)
+	at liquibase.Liquibase.update(Liquibase.java:198)
+	at liquibase.Liquibase.update(Liquibase.java:179)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:366)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:314)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1799)
+	... 23 common frames omitted
+INFO 	10:02:12.050	restartedMain	com.batch.updater.BatchUpdaterApplication	Starting BatchUpdaterApplication on 박해평 with PID 9500 (C:\dev\humuson\batchUpdater\batchUpdater\target\classes started by USER in C:\dev\humuson\batchUpdater\batchUpdater)
+INFO 	10:02:12.053	restartedMain	com.batch.updater.BatchUpdaterApplication	No active profile set, falling back to default profiles: default
+INFO 	10:02:14.620	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Starting...
+INFO 	10:02:14.807	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Start completed.
+INFO 	10:02:15.294	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT COUNT(*) FROM humuson_1.DATABASECHANGELOGLOCK
+INFO 	10:02:15.301	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT COUNT(*) FROM humuson_1.DATABASECHANGELOGLOCK
+INFO 	10:02:15.304	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT `LOCKED` FROM humuson_1.DATABASECHANGELOGLOCK WHERE ID=1
+INFO 	10:02:15.323	restartedMain	liquibase.lockservice.StandardLockService	Successfully acquired change log lock
+INFO 	10:02:16.234	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT MD5SUM FROM humuson_1.DATABASECHANGELOG WHERE MD5SUM IS NOT NULL LIMIT 1
+INFO 	10:02:16.236	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT COUNT(*) FROM humuson_1.DATABASECHANGELOG
+INFO 	10:02:16.238	restartedMain	liquibase.changelog.StandardChangeLogHistoryService	Reading from humuson_1.DATABASECHANGELOG
+INFO 	10:02:16.238	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT * FROM humuson_1.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+INFO 	10:02:16.254	restartedMain	liquibase.lockservice.StandardLockService	Successfully released change log lock
+WARN 	10:02:16.255	restartedMain	org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext	Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is java.lang.ArrayIndexOutOfBoundsException: 1
+INFO 	10:02:16.255	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Shutdown initiated...
+INFO 	10:02:16.267	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Shutdown completed.
+ERROR	10:02:16.283	restartedMain	org.springframework.boot.SpringApplication	Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is java.lang.ArrayIndexOutOfBoundsException: 1
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1803)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.batch.updater.BatchUpdaterApplication.main(BatchUpdaterApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.ArrayIndexOutOfBoundsException: 1
+	at liquibase.datatype.DataTypeFactory.fromDescription(DataTypeFactory.java:251)
+	at liquibase.change.core.CreateTableChange.generateStatements(CreateTableChange.java:70)
+	at liquibase.change.AbstractChange.generateStatementsVolatile(AbstractChange.java:287)
+	at liquibase.change.AbstractChange.warn(AbstractChange.java:358)
+	at liquibase.changelog.visitor.ValidatingVisitor.visit(ValidatingVisitor.java:110)
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:83)
+	at liquibase.changelog.DatabaseChangeLog.validate(DatabaseChangeLog.java:284)
+	at liquibase.Liquibase.update(Liquibase.java:198)
+	at liquibase.Liquibase.update(Liquibase.java:179)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:366)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:314)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1799)
+	... 23 common frames omitted
+INFO 	10:04:08.848	restartedMain	com.batch.updater.BatchUpdaterApplication	Starting BatchUpdaterApplication on 박해평 with PID 896 (C:\dev\humuson\batchUpdater\batchUpdater\target\classes started by USER in C:\dev\humuson\batchUpdater\batchUpdater)
+INFO 	10:04:08.851	restartedMain	com.batch.updater.BatchUpdaterApplication	No active profile set, falling back to default profiles: default
+INFO 	10:04:11.443	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Starting...
+INFO 	10:04:11.639	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Start completed.
+INFO 	10:04:12.220	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT COUNT(*) FROM humuson_1.DATABASECHANGELOGLOCK
+INFO 	10:04:12.229	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT COUNT(*) FROM humuson_1.DATABASECHANGELOGLOCK
+INFO 	10:04:12.231	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT `LOCKED` FROM humuson_1.DATABASECHANGELOGLOCK WHERE ID=1
+INFO 	10:04:12.251	restartedMain	liquibase.lockservice.StandardLockService	Successfully acquired change log lock
+INFO 	10:04:13.211	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT MD5SUM FROM humuson_1.DATABASECHANGELOG WHERE MD5SUM IS NOT NULL LIMIT 1
+INFO 	10:04:13.213	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT COUNT(*) FROM humuson_1.DATABASECHANGELOG
+INFO 	10:04:13.214	restartedMain	liquibase.changelog.StandardChangeLogHistoryService	Reading from humuson_1.DATABASECHANGELOG
+INFO 	10:04:13.215	restartedMain	liquibase.executor.jvm.JdbcExecutor	SELECT * FROM humuson_1.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+INFO 	10:04:13.231	restartedMain	liquibase.lockservice.StandardLockService	Successfully released change log lock
+WARN 	10:04:13.232	restartedMain	org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext	Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is java.lang.ArrayIndexOutOfBoundsException: 1
+INFO 	10:04:13.232	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Shutdown initiated...
+INFO 	10:04:13.243	restartedMain	com.zaxxer.hikari.HikariDataSource	HikariPool-1 - Shutdown completed.
+ERROR	10:04:13.260	restartedMain	org.springframework.boot.SpringApplication	Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is java.lang.ArrayIndexOutOfBoundsException: 1
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1803)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.batch.updater.BatchUpdaterApplication.main(BatchUpdaterApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.ArrayIndexOutOfBoundsException: 1
+	at liquibase.datatype.DataTypeFactory.fromDescription(DataTypeFactory.java:251)
+	at liquibase.change.core.CreateTableChange.generateStatements(CreateTableChange.java:70)
+	at liquibase.change.AbstractChange.generateStatementsVolatile(AbstractChange.java:287)
+	at liquibase.change.AbstractChange.warn(AbstractChange.java:358)
+	at liquibase.changelog.visitor.ValidatingVisitor.visit(ValidatingVisitor.java:110)
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:83)
+	at liquibase.changelog.DatabaseChangeLog.validate(DatabaseChangeLog.java:284)
+	at liquibase.Liquibase.update(Liquibase.java:198)
+	at liquibase.Liquibase.update(Liquibase.java:179)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:366)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:314)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1799)
+	... 23 common frames omitted

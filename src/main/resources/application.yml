@@ -1,0 +1,32 @@
+spring:
+    
+    devtools.restart:
+        enabled: true
+        exclude: logs/**
+    
+    datasource:
+      db0:
+        jdbcUrl: jdbc:mysql://10.172.17.31:3306/humuson_1?useUnicode=yes&characterEncoding=UTF-8&serverTimezone=UTC
+        username: humuson
+        password: humuson123
+        liquibase:
+          change-log: classpath:db/changelog/db0/db.changelog-master.xml
+      db1:
+        jdbcUrl: jdbc:mysql://10.172.17.31:3306/humuson_1_sub0?useUnicode=yes&characterEncoding=UTF-8&serverTimezone=UTC
+        username: humuson
+        password: humuson123
+        liquibase:
+          change-log: classpath:db/changelog/db1/db.changelog-master.xml
+    jpa:
+        database-platform: org.hibernate.dialect.MySQLDialect
+        generate-ddl: false
+        hibernate:
+            ddl-auto: none
+            naming:
+                implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyHbmImpl
+                physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        open-in-view: true
+        show-sql: false
+
+server: 
+    port: 8010
