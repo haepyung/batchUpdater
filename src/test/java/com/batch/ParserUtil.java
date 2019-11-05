@@ -1,6 +1,16 @@
 package com.batch;
 
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.junit.Test;
+
+import lombok.Data;
+import lombok.ToString;
 
 public class ParserUtil
 {
@@ -14,18 +24,76 @@ public class ParserUtil
 		 *
 		 */	
 		String header ="OK: pushpia-cn-tunnel: Mem: pushpia-cn-tunnel Memory usage over 80%";
-		String [] temp = header.split(":");
+		//String header ="OK: https://openapi-push.tason.com:444/ping: DBMS: Connection Failed";
+		// Fwd: OK: https://openapi-push.tason.com:444/ping Connection Failed
 		
-		//TODO 유효성검사
-		if (temp.length != 4)
+		// http://  https:// 이 없는데 4개 안되는 경우 실패 처리 insert
+		// 4개 인경우는 그대로 처리
+		// 4개 초과인경우 앞에서 한개 뒤에서 두개 외 나머지 insert
+        
+		String [] infos = header.split(":");
+		Properties result = null;
+		Date sendDate = new Date();
+		if (infos.length == 4 && !header.contains("http:") && !header.contains("https:")) result = succes(infos, sendDate);
+		else if (infos.length > 4 && (header.contains("http:") | header.contains("https:"))) result = succes(infos, sendDate);
+		else result =fail(header);
+		
+		if (result != null)
 		{
-			System.out.printf("[Fail] :: 문자열 파싱 결과 실패(본문에 ':'가 3개 있는지 확인 필요");
-			return;
+			System.out.println("MSG_ID: " + result.m.get("MSG_ID"));
+			System.out.println("SEND_DATE: " + result.m.get("SEND_DATE"));
+			System.out.println("STATE: " + result.m.get("STATE"));
+			System.out.println("SERVER: " + result.m.get("SERVER"));
+			System.out.println("SERVER_SUB: " + result.m.get("SERVER_SUB"));
+			System.out.println("RESULT: " + result.m.get("RESULT"));
+			System.out.println("CONTENTS: " + result.m.get("CONTENTS"));
+			System.out.println("CREATED: " + result.m.get("CREATED"));
 		}
+	}
+	
+	private Properties succes(String [] infos, Date sendDate) 
+	{
+		Properties prop = new Properties();
+
+		prop.setProperty("MSG_ID", UUID.randomUUID().toString());
+		prop.setProperty("SEND_DATE", sendDate.toString());
+		prop.setProperty("STATE", infos[0]);
+		String server = "";
+		for (int i = 1; i < infos.length -2; i++) server+=infos[i];
+		prop.setProperty("SERVER", server);
+		prop.setProperty("SERVER_SUB", infos[infos.length -2]);
+		prop.setProperty("CONTENTS", "");
+		prop.setProperty("RESULT", infos[infos.length -1]);
+		prop.setProperty("CREATED", new Date().toString());
 		
-		System.out.println("[ORI] :: " + header + ", SIZE:: " + temp.length);
-		for (String s : temp)
-			System.out.println("[RESULT] :: " + s);
+		return prop;
+	}
+
+	private Properties fail(String header)
+	{
+		Properties prop = new Properties();
+		prop.setProperty("MSG_ID", "FAIL" + UUID.randomUUID().toString());
+		prop.setProperty("SEND_DATE", "");
+		prop.setProperty("STATE", "INSERT FAIL");
+		prop.setProperty("SEVER", "");
+		prop.setProperty("SEVER_SUB", "");
+		prop.setProperty("RESULT", "");
+		prop.setProperty("CONTENTS", header);
+		prop.setProperty("CREATED", new Date().toString());
+		
+		return prop;
+	}
+		
+	
+	@Data
+	@ToString
+	public class Properties 
+	{
+		Map<String, String> m = new HashMap<String, String>(); 
+		public void setProperty(String string, String string2) 
+		{
+			m.put(string, string2);
+		}
 	}
 
 
