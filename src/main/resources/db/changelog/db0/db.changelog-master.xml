@@ -30,5 +30,5 @@
 				CHANGE SET 
 		##############################
 	-->
-	<include file="db/changelog/db0/db.changelog-1.0.0.xml" />
+	<!--  <include file="db/changelog/db0/db.changelog-1.0.0.xml" />-->
 </databaseChangeLog> 

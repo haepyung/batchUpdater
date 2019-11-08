@@ -5,29 +5,28 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.batch.updater.db1.model.Custom;
-import com.batch.updater.db1.repo.CustomRepo;
+import com.batch.updater.db1.model.IMC_MT_MSG_LOG;
 import com.batch.updater.db1.repo.Db1QueryDslRepoSupport;
+import com.batch.updater.db1.repo.IMC_MT_MSG_LOGRepo;
 
 @Service()
 @Transactional(readOnly=true)
-public class CustomService extends Db1QueryDslRepoSupport
+public class IMC_MT_MSG_LOGService extends Db1QueryDslRepoSupport
 {	
-	@Autowired private CustomRepo repo;
+	@Autowired private IMC_MT_MSG_LOGRepo repo;
 	
-	public CustomService()
+	public IMC_MT_MSG_LOGService()
 	{
-		super(Custom.class);
+		super(IMC_MT_MSG_LOG.class);
 	}
 	
 	@Modifying
 	@Transactional
-	public boolean save(Custom entity)
-	{		
+	public boolean save(IMC_MT_MSG_LOG entity)
+	{
 		try 
 		{
 			repo.save(entity);
@@ -39,12 +38,12 @@ public class CustomService extends Db1QueryDslRepoSupport
 		return true;
 	}
 	
-	public Custom findOne(String id)
+	public IMC_MT_MSG_LOG findOne(String id)
 	{
 		return repo.findById(id).get();
 	}
 	
-	public List<Custom> findAll()
+	public List<IMC_MT_MSG_LOG> findAll()
 	{
 		return repo.findAll();
 	}

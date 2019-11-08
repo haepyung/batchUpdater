@@ -6,13 +6,14 @@ spring:
     
     datasource:
       db0:
-        jdbcUrl: jdbc:mysql://10.172.17.31:3306/humuson_1?useUnicode=yes&characterEncoding=UTF-8&serverTimezone=UTC
-        username: humuson
-        password: humuson123
+        driver-class-name: oracle.jdbc.driver.OracleDriver
+        jdbcUrl: jdbc:oracle:thin:@119.207.76.20:1521:POSTMANDB
+        username: postman
+        password: dpdlapdlf0722
         liquibase:
           change-log: classpath:db/changelog/db0/db.changelog-master.xml
       db1:
-        jdbcUrl: jdbc:mysql://10.172.17.31:3306/humuson_1_sub0?useUnicode=yes&characterEncoding=UTF-8&serverTimezone=UTC
+        jdbcUrl: jdbc:mysql://127.0.0.1:3306/humuson_1_sub0?useUnicode=yes&characterEncoding=UTF-8&serverTimezone=UTC
         username: humuson
         password: humuson123
         liquibase:

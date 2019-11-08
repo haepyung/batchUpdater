@@ -24,5 +24,23 @@
         </rollback>
         
     </changeSet>
+    
+        <changeSet id="1.0.0-2" author="Haepyung">
+        <createTable tableName="Accounts4">
+			<column name="id" type="VARCHAR(36)">
+				<constraints nullable="false" primaryKey="true" primaryKeyName="PK_Accounts" />
+			</column>
+			<column name="name" type="VARCHAR(100)">
+				<constraints nullable="false" />
+            </column>
+			<column name="pw" type="VARCHAR(64)" />
+			<column name="email" type="VARCHAR(100)" />
+			<column name="ip" type="VARCHAR(255)" />  
+		</createTable>
+        <rollback>
+            <dropTable tableName="Accounts" />
+        </rollback>
+        
+    </changeSet>
 
 </databaseChangeLog>
